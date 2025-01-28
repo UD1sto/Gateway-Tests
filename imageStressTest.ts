@@ -98,7 +98,7 @@ async function makeRequest(url: string, payload: RequestPayload, requestNum: num
             const imagePath = path.join(imageDir, `request_${requestNum}_image_${i + 1}.png`);
             fs.writeFileSync(imagePath, imageResponse.data);
             console.log(`[Request ${requestNum}] Saved image to ${imagePath}`);
-          } catch (error) {
+          } catch (error: any) {
             console.error(`[Request ${requestNum}] Failed to save image ${i + 1}:`, error.message);
           }
         }
